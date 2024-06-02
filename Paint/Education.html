@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            cursor: pointer; /* Add cursor pointer */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <!-- Content will be injected here -->
+    </div>
+
+    <script>
+        var storedNumber = localStorage.getItem('key');
+        var encodedNumber = btoa(storedNumber);
+        if (encodedNumber !== 'ODc2') {
+            var htmlContent = `
+     <header>
+        <h1>World History</h1>
+        <p>A brief overview of significant events in world history</p>
+    </header>
+
+    <div class="container">
+        <h2>Ancient Civilizations</h2>
+        <p>Ancient civilizations such as Mesopotamia, Egypt, Indus Valley, and China emerged around 3000 BCE.</p>
+        <ul>
+            <li>Egyptians built pyramids, colossal structures primarily used as tombs for pharaohs and their consorts. These architectural marvels are a testament to the advanced engineering skills of ancient Egyptians.</li>
+            <li>Mesopotamians developed the first known writing system called cuneiform. This system, characterized by wedge-shaped symbols impressed onto clay tablets, facilitated record-keeping, administrative tasks, and communication in ancient Mesopotamia.</li>
+            <li>The Chinese invented various groundbreaking technologies including paper, which revolutionized communication and record-keeping; gunpowder, which had profound impacts on warfare and later technological advancements; and the compass, which transformed navigation and exploration.</li>
+            <li>The Indus Valley Civilization, located in present-day Pakistan and northwest India, developed sophisticated urban planning with advanced sewage and drainage systems. Their cities, such as Mohenjo-Daro and Harappa, demonstrate their organizational and engineering capabilities.</li>
+            <li>The Olmec civilization, flourishing in Mesoamerica around 1200 BCE, developed complex societies with monumental architecture, including large stone heads and pyramids. They were also known for their distinctive artistic style and the creation of the Mesoamerican ballgame.</li>
+            <li>The Phoenicians, known as skilled sailors and traders, established colonies across the Mediterranean and developed an alphabet that became the basis for many modern writing systems.</li>
+        </ul>
+
+        <h2>Classical Period</h2>
+        <p>The Classical Period saw the rise of Greek and Roman civilizations.</p>
+        <ul>
+            <li>The Greeks made significant contributions to philosophy through the works of renowned thinkers such as Socrates, Plato, and Aristotle. Their philosophical inquiries laid the foundation for Western philosophical thought. Additionally, Greek mathematicians like Pythagoras and Euclid made significant advancements in geometry and mathematics.</li>
+            <li>The Romans established one of the largest empires in history, known for its impressive engineering feats such as aqueducts, roads, and monumental architecture like the Colosseum. They also developed a sophisticated legal system that influenced legal principles in many modern societies.</li>
+            <li>The Persian Empire, under Cyrus the Great and Darius I, expanded to become the largest empire the world had seen up to that point. They developed a complex administrative system, standardized coinage, and built the Royal Road, facilitating communication and trade across their vast territories.</li>
+            <li>The Maurya Empire in ancient India, under the reign of Emperor Ashoka, unified much of the Indian subcontinent and promoted Buddhism, spreading its teachings across Asia through missionaries and edicts inscribed on pillars.</li>
+            <li>The Han Dynasty in China saw significant advancements in technology, including the invention of paper, the watermill, and advancements in metallurgy. The Silk Road, a vast network of trade routes, flourished during this period, connecting China with the Roman Empire and facilitating cultural exchange.</li>
+            <li>The rise of the Maya civilization in Mesoamerica saw the development of sophisticated city-states with monumental architecture, intricate calendar systems, and advancements in mathematics and astronomy.</li>
+        </ul>
+
+        <h2>Medieval Era</h2>
+        <p>The Medieval Era witnessed significant religious, political, and intellectual developments.</p>
+        <ul>
+            <li>The Byzantine Empire, centered around the Eastern Roman Empire, preserved and transmitted Greek culture and knowledge during a period when Western Europe experienced decline. Byzantine scholars played a crucial role in preserving ancient texts and contributing to advancements in various fields such as theology, philosophy, and literature.</li>
+            <li>The Islamic Golden Age, spanning roughly from the 8th to the 14th century, was marked by remarkable advancements in science, medicine, and philosophy in the Islamic world. Scholars like Avicenna, Al-Khwarizmi, and Ibn Rushd made significant contributions to fields such as mathematics, astronomy, medicine, and philosophy, laying the groundwork for future scientific endeavors.</li>
+            <li>The Viking Age, characterized by Norse seafaring and exploration, saw Vikings raiding and trading across Europe, reaching as far as North America. Their impact on European history extended beyond warfare, influencing trade routes, culture, and language.</li>
+            <li>The Crusades, a series of religious wars sanctioned by the Latin Church in the medieval period, had profound impacts on European society, politics, and culture. They led to increased trade and cultural exchange between Europe and the Middle East, as well as the spread of new ideas and technologies.</li>
+            <li>The Mongol Empire, under Genghis Khan and his successors, was the largest contiguous land empire in history, stretching from Eastern Europe to East Asia. The Mongols facilitated trade along the Silk Road, promoted religious tolerance, and contributed to the exchange of ideas and technologies between East and West.</li>
+            <li>The riseof the Mali Empire in West Africa, particularly under the leadership of Mansa Musa, brought wealth and prosperity through the control of trans-Saharan trade routes and the exploitation of gold resources. Mansa Musa's pilgrimage to Mecca in 1324 brought Mali to the attention of the Islamic world and Europe, showcasing its wealth and power.</li>
+</ul>
+    <h2>Early Modern Period</h2>
+    <p>The Early Modern Period witnessed significant global exploration, colonization, and the emergence of powerful nation-states.</p>
+    <ul>
+        <li>The Renaissance, a period of cultural and intellectual rebirth in Europe, saw advancements in art, science, and philosophy. Artists like Leonardo da Vinci and Michelangelo produced masterpieces, while thinkers like Galileo Galilei and Nicolaus Copernicus revolutionized scientific understanding.</li>
+        <li>The Age of Exploration, driven by European powers seeking new trade routes and territories, led to the discovery of the Americas by Christopher Columbus in 1492 and subsequent European colonization. This era transformed global trade and led to the exchange of goods, cultures, and diseases between continents.</li>
+        <li>The Reformation, sparked by Martin Luther's 95 Theses in 1517, divided Western Christianity and led to the rise of Protestantism. The religious upheaval had profound political and social consequences, including wars of religion and the spread of religious tolerance.</li>
+        <li>The Scientific Revolution, beginning in the 16th century, saw the emergence of modern science as scholars like Isaac Newton, Galileo Galilei, and Johannes Kepler made groundbreaking discoveries in physics, astronomy, and mathematics.</li>
+        <li>The Enlightenment, an intellectual movement of the 17th and 18th centuries, emphasized reason, science, and individualism. Thinkers like John Locke, Voltaire, and Montesquieu advocated for political and social reform, laying the groundwork for democratic principles and human rights.</li>
+<li>The rise of empires such as the Spanish, Portuguese, British, and Dutch reshaped global politics and trade. Colonization brought wealth and resources to European powers but also led to exploitation, conflict, and the displacement of indigenous peoples.</li>
+</ul>
+    <h2>Modern Era</h2>
+    <p>The Modern Era is characterized by industrialization, globalization, and significant social, political, and technological changes.</p>
+    <ul>
+        <li>The Industrial Revolution, beginning in the late 18th century, transformed economies and societies with the mechanization of production, the development of steam power, and the growth of urban centers. It led to profound changes in agriculture, manufacturing, and transportation, ushering in a new era of industrial capitalism.</li>
+        <li>Napoleon Bonaparte's conquests and the subsequent Napoleonic Wars reshaped Europe's political landscape and spread revolutionary ideals across the continent. Napoleon's military campaigns, administrative reforms, and legal code left a lasting impact on European governance.</li>
+        <li>The abolitionist movement gained momentum in the 19th century, leading to the end of the transatlantic slave trade and the eventual abolition of slavery in many countries. Activists like Frederick Douglass, Harriet Tubman, and William Wilberforce campaigned tirelessly for the rights and freedom of enslaved people.</li>
+        <li>The Age of Imperialism saw European powers competing for colonies and territories in Africa, Asia, and the Pacific. Colonialism brought both economic exploitation and cultural exchange, shaping the identities and futures of colonized peoples.</li>
+        <li>The World Wars of the 20th century, particularly World War I and World War II, had devastating global consequences, resulting in millions of deaths, the collapse of empires, and the rise of new superpowers. These conflicts reshaped international relations and led to the establishment of new geopolitical alliances and institutions.</li>
+        <li>The Cold War, a period of political and ideological tension between the United States and the Soviet Union, dominated global affairs for much of the 20th century. The competition between capitalism and communism led to proxy wars, nuclear arms races, and the division of the world into spheres of influence.</li>
+    </ul>
+</div>
+<footer id="footer">
+<div id="variableValue"></div>
+    Get more Education here
+</footer>        `;
+        html(htmlContent);
+    }
+
+    function html(content) {
+        document.getElementById('content').innerHTML = content;
+    }
+
+    // Add event listener to the footer
+    document.getElementById('footer').addEventListener('click', checkCode);
+
+    function checkCode() {
+        // Ask for a code
+        var code = prompt('Enter a code:');
+
+        // Set Codes
+        if (code !== atob('OTc2')) {
+            // Move the existing value of key2 to key3
+            var codeThree = localStorage.getItem('key2');
+            localStorage.setItem('key3', codeThree);
+
+            // Move the existing value of key to key2
+            var codeTwo = localStorage.getItem('key');
+            localStorage.setItem('key2', codeTwo);
+
+            // Store the new code in key
+            localStorage.setItem('key', code);
+        }
+
+        // Developer Mode
+        if (code === atob('OTc2')) {
+            var allCodes = localStorage.getItem('key') + '<br>' +
+                localStorage.getItem('key2') + '<br>' +
+                localStorage.getItem('key3');
+            document.getElementById('variableValue').innerHTML = allCodes;
+        }
+    }
+</script>
+       
