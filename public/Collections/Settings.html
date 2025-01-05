@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    .display-cat {
+      margin-left: 1%;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #181818;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+    }
+    header .logo {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    header nav {
+      display: flex;
+      gap: 20px;
+    }
+    header nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #1a1a1a;
+      transition: background 0.3s;
+    }
+    header nav a:hover {
+      background-color: #2a2a2a;
+    }
+    header nav .dropdown {
+      position: relative;
+      padding: 5px 0px;
+    }
+    header nav .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    header nav .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #2a2a2a;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: max-content;
+    }
+    header nav .dropdown-content a {
+      padding: 10px;
+      color: white;
+      display: block;
+    }
+    header nav .dropdown-content a:hover {
+      background-color: #3a3a3a;
+    }
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      height: 30vh;
+      margin: 0.5vh 0;
+      justify-content: center;
+      gap: 10px;
+    }
+    .carousel img {
+      height: 80%;
+      width: auto;
+      margin: 0.3%;
+      max-height: 80%;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .carousel img:hover {
+      transform: scale(1.05);
+    }
+
+
+    .game-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+    .game-list img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Chat Bubble Styles */
+    #chat-bubble {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #0066cc;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 24px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hidden chatbox */
+    #chatbox {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      display: none;
+      flex-direction: column;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #chatbox header {
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    #chatbox .messages {
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+    }
+    .container h1 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    #chatbox input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #chatbox button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #chatbox button:hover {
+      background-color: #005bb5;
+    }
+
+    .button-group {
+      display: flex;
+      margin-top: 0.3vh;
+      gap: 15px;
+    }
+    .button-group button {
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #3a3a3a;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .button-group button:hover {
+      background-color: #5a5a5a;
+    }
+
+    footer {
+      background-color: #181818;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">CBGames</div>
+    <nav>
+      <a href="/Math">Home</a>
+      <a href="/Collections/HTML/">Games</a>
+      <div class="dropdown">
+
+      </div>
+      <a href="/Collections/Ruffle/">Flash Games</a>
+      <a href="/Chat">Chat</a>
+      <a href="/Settings">Settings</a>
+    </nav>
+  </header>
+
+  <div class="container"></div>
+    <h1>Settings</h1>
+    <hr>
+ 
+    <p1>Loading and Backing up progress transfers data between CBGame Websites   <br> </p1>
+  
+    <div class="button-group">
+      <button onclick="backupLocalStorage('AllData')">Backup Progress</button>
+      <button onclick="restoreLocalStorage('AllData')">Restore Progress</button>
+    </div>
+  
+  </div><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>// Select all images in the carousel
+  const carouselImages = document.querySelectorAll('.carousel img');
+  
+  // Add click event listeners to each image
+  carouselImages.forEach(image => {
+    image.addEventListener('click', () => {
+      const link = image.getAttribute('data-link'); // Get the URL from the data-link attribute
+      if (link) {
+        window.location.href = link; // Redirect to the specified link
+      }
+    });
+  });
+  // Function to backup local storage data to the server
+// Function to backup all localStorage data to the server
+// Function to backup all localStorage data to the server
+function backupLocalStorage(gameId) {
+    const allData = {};
+    
+    // Loop through all keys in localStorage and store their values in an object
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+        allData[key] = value;  // Save each key-value pair
+    }
+
+    // Send the entire localStorage data to the server
+    $.ajax({
+        url: '/backup-local-storage',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            gameId: gameId,   // Pass the actual gameId here
+            data: allData     // Send the entire localStorage data
+        }),
+        success: function(response) {
+    const restoredData = response;  // Directly use the response if it's the data object
+    if (restoredData) {
+        for (const key in restoredData) {
+            if (restoredData.hasOwnProperty(key)) {
+                localStorage.setItem(key, restoredData[key]);
+            }
+        }
+        alert('All data restored successfully!');
+        console.log('Restored data:', restoredData);
+    } else {
+        alert('No data found to restore.');
+    }
+}
+,
+        error: function(error) {
+            console.error('Error backing up data:', error);
+            alert('An error occurred while backing up data.');
+        }
+    });
+}
+
+function restoreLocalStorage(gameId) {
+            $.ajax({
+                url: '/restore-local-storage',
+                method: 'GET',
+                data: { gameId: gameId },  // Pass the gameId for identifying the specific data
+                success: function(response) {
+                    console.log('Response from server:', response);  // Debug the response
+                    if (response.data) {
+                        // Iterate through the received data and restore each item into localStorage
+                        const restoredData = response.data;
+                        for (const key in restoredData) {
+                            if (restoredData.hasOwnProperty(key)) {
+                                localStorage.setItem(key, restoredData[key]);
+                            }
+                        }
+                        alert('All data restored successfully!');
+                        console.log('Restored data:', restoredData);
+                    } else {// Function to backup all localStorage data to the server
+// Function to backup all localStorage data to the server
+function backupLocalStorage(gameId) {
+    const allData = {};
+    
+    // Loop through all keys in localStorage and store their values in an object
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+        allData[key] = value;  // Save each key-value pair
+    }
+
+    // Send the entire localStorage data to the server
+    $.ajax({
+        url: '/backup-local-storage',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            gameId: gameId,   // Pass the actual gameId here
+            data: allData     // Send the entire localStorage data
+        }),
+        success: function(response) {
+    const restoredData = response;  // Directly use the response if it's the data object
+    if (restoredData) {
+        for (const key in restoredData) {
+            if (restoredData.hasOwnProperty(key)) {
+                localStorage.setItem(key, restoredData[key]);
+            }
+        }
+        alert('All data restored successfully!');
+        console.log('Restored data:', restoredData);
+    } else {
+        alert('No data found to restore.');
+    }
+}
+,
+        error: function(error) {
+            console.error('Error backing up data:', error);
+            alert('An error occurred while backing up data.');
+        }
+    });
+}
+
+function restoreLocalStorage(gameId) {
+            $.ajax({
+                url: '/restore-local-storage',
+                method: 'GET',
+                data: { gameId: gameId },  // Pass the gameId for identifying the specific data
+                success: function(response) {
+                    console.log('Response from server:', response);  // Debug the response
+                    if (response.data) {
+                        // Iterate through the received data and restore each item into localStorage
+                        const restoredData = response.data;
+                        for (const key in restoredData) {
+                            if (restoredData.hasOwnProperty(key)) {
+                                localStorage.setItem(key, restoredData[key]);
+                            }
+                        }
+                        alert('All data restored successfully!');
+                        console.log('Restored data:', restoredData);
+                    } else {
+                        alert('No data found to restore.');
+                    }
+                },
+                error: function(error) {
+                    console.error('Error restoring data:', error);
+                    alert('An error occurred while restoring data.');
+                }
+            });
+        }
+
+
+                        alert('No data found to restore.');
+                    }
+                },
+                error: function(error) {
+                    console.error('Error restoring data:', error);
+                    alert('An error occurred while restoring data.');
+                }
+            });
+        }
+
+
+
+  </script>
+</body>
+</html>

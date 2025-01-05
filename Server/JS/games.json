@@ -1,0 +1,169 @@
+{
+  "htmlGames": [
+    {
+      "route": "/Collections/HTML/Drifthunters/play",
+      "file": "HTML/Drifthunters/play.html",
+      "game": "Drifthunters"
+    },
+    {
+      "route": "/Collections/HTML/Turbowarp_(Scratch)/play",
+      "file": "HTML/Turbowarp_(Scratch)/play.html",
+      "game": "Turbowarp (Scratch)"
+    },
+    {
+      "route": "/Collections/HTML/Eaglercraft/play",
+      "file": "HTML/Eaglercraft/play.html",
+      "game": "Eaglercraft"
+    },
+    {
+      "route": "/Collections/HTML/Spaceplan/play",
+      "file": "HTML/Spaceplan/play.html",
+      "game": "Spaceplan"
+    },
+    {
+      "route": "/Collections/HTML/Cookie_Clicker/play",
+      "file": "HTML/Cookie_Clicker/play.html",
+      "game": "Cookie Clicker"
+    },
+    {
+      "route": "/Collections/HTML/Soccer_Random/play",
+      "file": "HTML/Soccer_Random/play.html",
+      "game": "Soccer Random"
+    },
+    {
+      "route": "/Collections/HTML/Baldis_Basics/play",
+      "file": "HTML/Baldis_Basics/play.html",
+      "game": "Baldis Basics"
+    },
+    {
+      "route": "/Collections/HTML/Wordle/play",
+      "file": "HTML/Wordle/play.html",
+      "game": "Wordle"
+    },
+    {
+      "route": "/Collections/HTML/Getaway_Shootout/play",
+      "file": "HTML/Getaway_Shootout/play.html",
+      "game": "Getaway Shootout"
+    },
+    {
+      "route": "/Collections/HTML/Space_Company/play",
+      "file": "HTML/Space_Company/play.html",
+      "game": "Space Company"
+    },
+    {
+      "route": "/Collections/HTML/Slowroads/play",
+      "file": "HTML/Slowroads/play.html",
+      "game": "Slowroads"
+    },
+    {
+      "route": "/Collections/HTML/Super_Mario_64/play",
+      "file": "HTML/Super_Mario_64/play.html",
+      "game": "Super Mario 64"
+    },
+    {
+      "route": "/Collections/HTML/Doge_Miner/play",
+      "file": "HTML/Doge_Miner/play.html",
+      "game": "Doge Miner"
+    },
+    {
+      "route": "/Collections/HTML/Monster_Tracks/play",
+      "file": "HTML/Monster_Tracks/play.html",
+      "game": "Monster Tracks"
+    },
+    {
+      "route": "/Collections/HTML/Dodge/play",
+      "file": "HTML/Dodge/play.html",
+      "game": "Dodge"
+    },
+    {
+      "route": "/Collections/HTML/AI_Chess/play",
+      "file": "HTML/AI_Chess/play.html",
+      "game": "AI Chess"
+    },
+    {
+      "route": "/Collections/HTML/Electric_Clciker/play",
+      "file": "HTML/Electric_Clciker/play.html",
+      "game": "Electric Clciker"
+    },
+    {
+      "route": "/Collections/HTML/Sandboxel/play",
+      "file": "HTML/Sandboxel/play.html",
+      "game": "Sandboxel"
+    },
+    {
+      "route": "/Collections/HTML/Basket_Random/play",
+      "file": "HTML/Basket_Random/play.html",
+      "game": "Basket Random"
+    },
+    {
+      "route": "/Collections/HTML/Candy_Box_2/play",
+      "file": "HTML/Candy_Box_2/play.html",
+      "game": "Candy Box 2"
+    },
+    {
+      "route": "/Collections/HTML/Planetesimals/play",
+      "file": "HTML/Planetesimals/play.html",
+      "game": "Planetesimals"
+    },
+    {
+      "route": "/Collections/HTML/Polytrack/play",
+      "file": "HTML/Polytrack/play.html",
+      "game": "Polytrack"
+    },
+    {
+      "route": "/Collections/HTML/CSGO_Clicker/play",
+      "file": "HTML/CSGO_Clicker/play.html",
+      "game": "CSGO Clicker"
+    },
+    {
+      "route": "/Collections/HTML/FNAF_1/play",
+      "file": "HTML/FNAF_1/play.html",
+      "game": "FNAF 1"
+    },
+    {
+      "route": "/Collections/HTML/Retrobowl/play",
+      "file": "HTML/Retrobowl/play.html",
+      "game": "Retrobowl"
+    },
+    {
+      "route": "/Collections/HTML/Drive_Mad/play",
+      "file": "HTML/Drive_Mad/play.html",
+      "game": "Drive Mad"
+    },
+    {
+      "route": "/Collections/HTML/Cellular_Automata/play",
+      "file": "HTML/Cellular_Automata/play.html",
+      "game": "Cellular Automata"
+    },
+    {
+      "route": "/Collections/HTML/Burito_Bison/play",
+      "file": "HTML/Burito_Bison/play.html",
+      "game": "Burito Bison"
+    },
+    {
+      "route": "/Collections/HTML/Bitlife/play",
+      "file": "HTML/Bitlife/play.html",
+      "game": "Bitlife"
+    },
+    {
+      "route": "/Collections/HTML/Crossyroad_-_Space/play",
+      "file": "HTML/Crossyroad_-_Space/play.html",
+      "game": "Crossyroad - Space"
+    },
+    {
+      "route": "/Collections/HTML/N-Gon/play",
+      "file": "HTML/N-Gon/play.html",
+      "game": "N-Gon"
+    },
+    {
+      "route": "/Collections/HTML/Funny_Shooter_2/play",
+      "file": "HTML/Funny_Shooter_2/play.html",
+      "game": "Funny Shooter 2"
+    },
+    {
+      "route": "/Collections/HTML/Awesome_Tanks/play",
+      "file": "HTML/Awesome_Tanks/play.html",
+      "game": "Awesome Tanks"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Text Converter</title>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js/dist/tesseract.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+        }
+        #copyButton {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image to Text Converter</h1>
+    <p>Paste an image (Ctrl+V) or upload to extract the text.</p>
+    <input type="file" id="imageInput" accept="image/*">
+    <div id="output">Extracted text will appear here...</div>
+    <button id="copyButton">Copy Text</button>
+
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const outputDiv = document.getElementById('output');
+        const copyButton = document.getElementById('copyButton');
+
+        // Handle image file upload
+        imageInput.addEventListener('change', () => {
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    processImage(reader.result);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                outputDiv.textContent = 'No file selected.';
+            }
+        });
+
+        // Handle paste event
+        document.addEventListener('paste', (event) => {
+            const items = event.clipboardData.items;
+            for (let item of items) {
+                if (item.type.startsWith('image/')) {
+                    const file = item.getAsFile();
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                        processImage(reader.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+        });
+
+        // Process image with Tesseract.js
+        function processImage(image) {
+            Tesseract.recognize(
+                image, // Image file as base64
+                'eng', // Language code (English)
+                {
+                    logger: info => console.log(info) // Log progress
+                }
+            ).then(({ data: { text } }) => {
+                outputDiv.textContent = text;
+            }).catch(error => {
+                outputDiv.textContent = 'Error: ' + error.message;
+            });
+        }
+
+        // Copy text to clipboard
+        copyButton.addEventListener('click', () => {
+            const text = outputDiv.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Text copied to clipboard!');
+            }).catch(err => {
+                alert('Failed to copy text: ' + err);
+            });
+        });
+    </script>
+</body>
+</html>

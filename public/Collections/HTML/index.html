@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+  <link rel="icon" type="image/png" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico" sizes="16x16">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #181818;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      z-index: 1000; /* Ensure header stays on top */
+    }
+    header .logo {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    header nav {
+      display: flex;
+      gap: 20px;
+    }
+    header nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #1a1a1a;
+      transition: background 0.3s;
+    }
+    header nav a:hover {
+      background-color: #2a2a2a;
+    }
+    header nav .dropdown {
+      position: relative;
+      padding: 5px 0;
+    }
+
+    header nav .dropdown:hover .dropdown-content {
+      display: block;
+      z-index: 1001; /* Ensure dropdown is above game buttons */
+    }
+
+    header nav .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%; /* Position dropdown below the link */
+      left: 0;
+      background-color: #2a2a2a;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: max-content;
+      z-index: 1001; /* Ensure the dropdown content is above game buttons */
+    }
+
+    header nav .dropdown-content a {
+      padding: 10px;
+      color: white;
+      display: block;
+    }
+
+    header nav .dropdown-content a:hover {
+      background-color: #3a3a3a;
+    }
+
+
+    ::-webkit-scrollbar {
+    width: 12px; /* Horizontal scrollbar width */
+    height: 12px; /* Vertical scrollbar height */
+}
+
+/* The track (part the scrollbar slides within) */
+::-webkit-scrollbar-track {
+    background: #3a3a3a; /* Light gray track */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* The handle (part you drag) */
+::-webkit-scrollbar-thumb {
+    background: #474747; /* Dark gray handle */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* The handle when hovered */
+::-webkit-scrollbar-thumb:hover {
+    background: #464646; /* Darker gray when hovered */
+}
+
+/* Optional: Customizing the scrollbar corner (when there are both horizontal and vertical scrollbars) */
+::-webkit-scrollbar-corner {
+    background: #2b2a2a;
+}
+
+
+    /* Chatbox */
+    #chatbox {
+      position: fixed;
+      bottom: 10%;
+      right: 0;
+      width: 20%;
+      height: 60%;
+      border: 1px solid #ccc;
+      overflow-y: scroll;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      color: #fff;
+      border-radius: 20px;
+      font-size: 0.75vw;
+      box-sizing: border-box;
+    }
+    #chat-controls {
+      position: fixed;
+      bottom: 10%;
+      right: 0;
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    #message-input, #username {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 5px;
+      border: none;
+    }
+    #send-button {
+      padding: 10px;
+      background-color: #0066cc;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    #send-button:hover {
+      background-color: #005bb5;
+    }
+    .clock {
+      position: fixed;
+      top: 0.5vw;
+      left: 0.5vw;
+      color: white;
+      font-size: 2vw;
+      letter-spacing: 0.3vw;
+      font-family: 'Clock', sans-serif;
+      background-color: #111;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 8px 8px 16px 111, -8px -8px 16px #4d4d4d;
+    }
+/* Adjust container for game items */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center-align items */
+  gap: 20px; /* Reduced spacing between items */
+  padding: 20px;
+  max-width: 80%; /* Limit the maximum width */
+  margin: 0 auto; /* Center the container itself */
+}
+
+/* Individual game item */
+.game-item {
+  text-align: center;
+  width: 200px; /* Fixed width for consistency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Square button (thumbnail) */
+.square-button {
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  margin: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* Game title bubble */
+.game-title {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  width: auto;
+  text-align: center;
+  color: white;
+  display: inline-block;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for buttons */
+.square-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 15px rgba(102, 102, 102, 0.5);
+}
+    /* Search bar container */
+    .search-bar {
+      margin: 20px auto;
+      width: 60%;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Search input */
+    #search-input {
+      width: 100%;
+      padding: 10px 15px;
+      font-size: 16px;
+      color: #ffffff;
+      background-color: #252525;
+      border: 2px solid #535353;
+      border-radius: 25px;
+      outline: none;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #search-input:focus {
+      border-color: #444444;
+      box-shadow: 0px 6px 12px rgba(26, 26, 26, 0.3);
+      transform: scale(1.02);
+    }
+
+    #search-input::placeholder {
+      color: #585858;
+      font-style: italic;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">CBGames</div>
+    <nav>
+      <a href="/Math">Home</a>
+      <a href="/Collections/HTML/">Games</a>
+      <div class="dropdown">
+
+      </div>
+      <a href="/Collections/Ruffle/">Flash Games</a>
+      <a href="/Chat">Chat</a>
+      <a href="/Settings">Settings</a>
+    </nav>
+  </header>
+  <div class="search-bar">
+    <input 
+      type="text" 
+      id="search-input" 
+      placeholder="Search for games..." 
+      oninput="filterGames()"
+    >
+  </div>
+  <div id="games-container" class="container"></div>
+  
+    
+      <script>
+        const gamesJson = {
+  "htmlGames": [
+  {
+      "route": "/Collections/HTML/Drifthunters/play",
+      "file": "HTML/Drifthunters/play.html",
+      "game": "Drifthunters"
+    },   
+     {
+      "route": "/Collections/HTML/Eaglercraft/play",
+      "file": "HTML/Eaglercraft/play.html",
+      "game": "Eaglercraft"
+    },
+    {
+      "route": "/Collections/HTML/Turbowarp_(Scratch)/play",
+      "file": "HTML/Turbowarp_(Scratch)/play.html",
+      "game": "Turbowarp (Scratch)"
+    },
+    {
+      "route": "/Collections/HTML/Spaceplan/play",
+      "file": "HTML/Spaceplan/play.html",
+      "game": "Spaceplan"
+    },
+    {
+      "route": "/Collections/HTML/Cookie_Clicker/play",
+      "file": "HTML/Cookie_Clicker/play.html",
+      "game": "Cookie Clicker"
+    },
+    {
+      "route": "/Collections/HTML/Soccer_Random/play",
+      "file": "HTML/Soccer_Random/play.html",
+      "game": "Soccer Random"
+    },
+    {
+      "route": "/Collections/HTML/Baldis_Basics/play",
+      "file": "HTML/Baldis_Basics/play.html",
+      "game": "Baldis Basics"
+    },
+    {
+      "route": "/Collections/HTML/Wordle/play",
+      "file": "HTML/Wordle/play.html",
+      "game": "Wordle"
+    },
+    {
+      "route": "/Collections/HTML/Getaway_Shootout/play",
+      "file": "HTML/Getaway_Shootout/play.html",
+      "game": "Getaway Shootout"
+    },
+    {
+      "route": "/Collections/HTML/Space_Company/play",
+      "file": "HTML/Space_Company/play.html",
+      "game": "Space Company"
+    },
+    {
+      "route": "/Collections/HTML/Slowroads/play",
+      "file": "HTML/Slowroads/play.html",
+      "game": "Slowroads"
+    },
+    {
+      "route": "/Collections/HTML/Super_Mario_64/play",
+      "file": "HTML/Super_Mario_64/play.html",
+      "game": "Super Mario 64"
+    },
+    {
+      "route": "/Collections/HTML/Doge_Miner/play",
+      "file": "HTML/Doge_Miner/play.html",
+      "game": "Doge Miner"
+    },
+    {
+      "route": "/Collections/HTML/Monster_Tracks/play",
+      "file": "HTML/Monster_Tracks/play.html",
+      "game": "Monster Tracks"
+    },
+    {
+      "route": "/Collections/HTML/Dodge/play",
+      "file": "HTML/Dodge/play.html",
+      "game": "Dodge"
+    },
+    {
+      "route": "/Collections/HTML/AI_Chess/play",
+      "file": "HTML/AI_Chess/play.html",
+      "game": "AI Chess"
+    },
+    {
+      "route": "/Collections/HTML/Electric_Clciker/play",
+      "file": "HTML/Electric_Clciker/play.html",
+      "game": "Electric Clciker"
+    },
+    {
+      "route": "/Collections/HTML/Sandboxel/play",
+      "file": "HTML/Sandboxel/play.html",
+      "game": "Sandboxel"
+    },
+    {
+      "route": "/Collections/HTML/Basket_Random/play",
+      "file": "HTML/Basket_Random/play.html",
+      "game": "Basket Random"
+    },
+    {
+      "route": "/Collections/HTML/Candy_Box_2/play",
+      "file": "HTML/Candy_Box_2/play.html",
+      "game": "Candy Box 2"
+    },
+    {
+      "route": "/Collections/HTML/Planetesimals/play",
+      "file": "HTML/Planetesimals/play.html",
+      "game": "Planetesimals"
+    },
+    {
+      "route": "/Collections/HTML/Polytrack/play",
+      "file": "HTML/Polytrack/play.html",
+      "game": "Polytrack"
+    },
+    {
+      "route": "/Collections/HTML/CSGO_Clicker/play",
+      "file": "HTML/CSGO_Clicker/play.html",
+      "game": "CSGO Clicker"
+    },
+    {
+      "route": "/Collections/HTML/FNAF_1/play",
+      "file": "HTML/FNAF_1/play.html",
+      "game": "FNAF 1"
+    },
+    {
+      "route": "/Collections/HTML/Retrobowl/play",
+      "file": "HTML/Retrobowl/play.html",
+      "game": "Retrobowl"
+    },
+    {
+      "route": "/Collections/HTML/Drive_Mad/play",
+      "file": "HTML/Drive_Mad/play.html",
+      "game": "Drive Mad"
+    },
+    {
+      "route": "/Collections/HTML/Cellular_Automata/play",
+      "file": "HTML/Cellular_Automata/play.html",
+      "game": "Cellular Automata"
+    },
+    {
+      "route": "/Collections/HTML/Burito_Bison/play",
+      "file": "HTML/Burito_Bison/play.html",
+      "game": "Burito Bison"
+    },
+    {
+      "route": "/Collections/HTML/Bitlife/play",
+      "file": "HTML/Bitlife/play.html",
+      "game": "Bitlife"
+    },
+    {
+      "route": "/Collections/HTML/Crossyroad_-_Space/play",
+      "file": "HTML/Crossyroad_-_Space/play.html",
+      "game": "Crossyroad - Space"
+    },
+    {
+      "route": "/Collections/HTML/N-Gon/play",
+      "file": "HTML/N-Gon/play.html",
+      "game": "N-Gon"
+    },
+    {
+      "route": "/Collections/HTML/Funny_Shooter_2/play",
+      "file": "HTML/Funny_Shooter_2/play.html",
+      "game": "Funny Shooter 2"
+    },
+    {
+      "route": "/Collections/HTML/Awesome_Tanks/play",
+      "file": "HTML/Awesome_Tanks/play.html",
+      "game": "Awesome Tanks"
+    }
+  ]
+}
+;
+
+const gamesContainer = document.getElementById('games-container');
+
+// Function to populate games in alphabetical order
+function generateGames() {
+  gamesContainer.innerHTML = ''; // Clear the container
+
+  // Sort games alphabetically by their title
+  const sortedGames = gamesJson.htmlGames.sort((a, b) => a.game.localeCompare(b.game));
+
+  sortedGames.forEach(game => {
+    const gameItem = document.createElement('div');
+    gameItem.className = 'game-item';
+
+    // Modify route to remove '/play' for thumbnail path
+    const thumbnailPath = game.route.replace('/play', '') + '/thumbnail.png';
+
+    // Create button
+    const button = document.createElement('button');
+    button.className = 'square-button loaded';
+    button.style.backgroundImage = `url('${thumbnailPath}')`; // Use modified path
+    button.style.backgroundSize = 'cover';
+    button.onclick = () => window.location.href = game.route;
+
+    // Create title
+    const title = document.createElement('p');
+    title.className = 'game-title';
+    title.textContent = game.game;
+
+    // Append button and title to game item
+    gameItem.appendChild(button);
+    gameItem.appendChild(title);
+
+    // Append game item to container
+    gamesContainer.appendChild(gameItem);
+  });
+}
+
+
+// Filter games based on search input
+function filterGames() {
+  const query = document.getElementById('search-input').value.toLowerCase();
+  const gameItems = document.querySelectorAll('.game-item');
+
+  gameItems.forEach(item => {
+    const title = item.querySelector('.game-title').innerText.toLowerCase();
+    item.style.display = title.includes(query) ? 'flex' : 'none';
+  });
+}
+
+// Initialize
+generateGames();
+
+        // Function to add loaded class to buttons after page load
+        window.addEventListener('load', function() {
+          var buttons = document.querySelectorAll('.square-button');
+          buttons.forEach(function(button) {
+            button.classList.add('loaded');
+          });
+        });
+    
+        // Function to show loading animation
+        function Load(button, imageUrl, gameUrl) {
+            window.location.href = gameUrl;
+        }
+      </script>
+    </body>
+    </html>
+    

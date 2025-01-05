@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - CBGames</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    .display-cat {
+      margin-left: 1%;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #181818;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+    }
+    header .logo {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    header nav {
+      display: flex;
+      gap: 20px;
+    }
+    header nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #1a1a1a;
+      transition: background 0.3s;
+    }
+    header nav a:hover {
+      background-color: #2a2a2a;
+    }
+    header nav .dropdown {
+      position: relative;
+      padding: 5px 0px;
+    }
+    header nav .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    header nav .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #2a2a2a;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: max-content;
+    }
+    header nav .dropdown-content a {
+      padding: 10px;
+      color: white;
+      display: block;
+    }
+    header nav .dropdown-content a:hover {
+      background-color: #3a3a3a;
+    }
+    footer {
+      background-color: #181818;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .error-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    .error-container h1 {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+    .error-container p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .error-container a {
+      color: #0066cc;
+      text-decoration: none;
+      font-size: 20px;
+      border: 2px solid #0066cc;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .error-container a:hover {
+      background-color: #0066cc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">CBGames</div>
+    <nav>
+      <a href="/Math">Home</a>
+      <a href="/Collections/HTML/">Games</a>
+      <div class="dropdown">
+
+      </div>
+      <a href="/Collections/Ruffle/">Flash Games</a>
+      <a href="/Chat">Chat</a>
+      <a href="/Settings">Settings</a>
+    </nav>
+  </header>
+
+  <div class="error-container">
+    <h1>404</h1>
+    <p>Oops! The page you're looking for doesn't exist. This may be because this page isn't finished yet.</p>
+    <a href="/Math">Go Back to Homepage</a>
+  </div>
+
+
+</body>
+</html>

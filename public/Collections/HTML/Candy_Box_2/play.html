@@ -1,0 +1,117 @@
+
+
+
+<html manifest="cacheManifest.mf">
+  <head>
+    <title>Candy Box 2</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+       
+  
+          // Create the bell icon
+          const bellIcon = document.createElement('div');
+          bellIcon.id = 'bell-icon';
+          bellIcon.style.position = 'fixed';
+          bellIcon.style.left = '50%'; // Center horizontally
+          bellIcon.style.transform = 'translateX(-50%)'; // Adjust position to center
+          bellIcon.style.top = '-50px'; // Start off-screen
+          bellIcon.style.width = '40px'; // Set size of the bell
+          bellIcon.style.height = '40px';
+          bellIcon.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/1827/1827349.png')"; // Replace with your bell icon URL
+          bellIcon.style.backgroundSize = 'contain';
+          bellIcon.style.backgroundRepeat = 'no-repeat';
+          bellIcon.style.transition = 'top 0.5s ease'; // Smooth transition
+          bellIcon.style.zIndex = '1000'; // Ensure it's on top of everything
+  
+          document.body.appendChild(bellIcon);
+  
+          let previousUnreadCount = 0; // Track previous count to show bell
+  
+          async function updateUnreadCount() {
+              try {
+                  const response = await fetch('/unread-messages');
+                  if (!response.ok) {
+                      throw new Error('Network response was not ok');
+                  }
+  
+                  const data = await response.json();
+                  const unreadCount = data.unreadCount;
+  
+                 
+  
+                  // Show the bell icon if there's an increase in unread notifications
+                  if (unreadCount > previousUnreadCount) {
+                      bellIcon.style.top = '20px'; // Move down into view
+                      setTimeout(() => {
+                          bellIcon.style.top = '-50px'; // Move back up after a short period
+                      }, 5000); // Show for 5 seconds
+                  }
+  
+                  // Update previous unread count
+                  previousUnreadCount = unreadCount;
+  
+              } catch (error) {
+                  console.error('There was a problem with the fetch operation:', error);
+              }
+          }
+  
+  
+          setInterval(updateUnreadCount, 1000);
+          // Call the function to update the unread count on page load
+          updateUnreadCount();
+      });
+  </script>
+  
+    <script type="text/javascript" src="libs/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="candybox2.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/design.css"/>
+    <link rel="icon" type="image/png" href="favicon.png"/> <!-- Favicon by HacksawUnit (https://twitter.com/HacksawUnit) -->
+  </head>
+  <body>
+      <div id="aroundStatusBar"><pre id="statusBar"></pre></div>
+      <pre id="mainContent"></pre>
+      <pre id="versionNumber">Version 1.2.3, <a href="faq.html" target="_blank">FAQ</a>, <a href="http://webchat.quakenet.org/?channels=candybox2&uio=d4" target="_blank">IRC</a>, <a href="http://candybox2.wordpress.com" target="_blank">blog</a>, <a href="http://candybox2.gamepedia.com" target="_blank">wiki</a>, <a href="https://github.com/candybox2/candybox2.github.io" target="_blank">source code</a>, <b><a target="_blank" href="http://candybox2.github.io/candybox/">Candy Box</a></b></pre>
+  </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function backupLocalStorage() {
+        const allData = {};
+    
+        // Collect all localStorage data
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            allData[key] = localStorage.getItem(key);
+        }
+    
+        console.log("All Data to be backed up:", allData);  // Debugging line
+    
+        // Send the data to the server
+        $.ajax({
+            url: '/backup-local-storage',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ data: allData }),
+            success: function () {
+                console.log('Progress backed up successfully.');
+            },
+            error: function (error) {
+                console.error('Error backing up data:', error);
+            }
+        });
+    }
+
+    setInterval(backupLocalStorage, 5000);
+</script>
+</html>
+
+<!--
+___    .-"""-.    ___
+\  \  /\ \ \ \\  /  /
+ }  \/\ \ \ \ \\/  {    A candy!!
+ }  /\ \ \ \ \ /\  {
+/__/  \ \ \ \ /  \__\
+       '-...-'
+-->

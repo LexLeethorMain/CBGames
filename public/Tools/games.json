@@ -1,0 +1,194 @@
+{
+  "htmlGames": [
+    {
+      "route": "/Collections/HTML/drifthunters/play",
+      "file": "HTML/drifthunters/play.html",
+      "game": "drifthunters"
+    },
+    {
+      "route": "/Collections/HTML/TW/play",
+      "file": "HTML/TW/play.html",
+      "game": "TW"
+    },
+    {
+      "route": "/Collections/HTML/SP/play",
+      "file": "HTML/SP/play.html",
+      "game": "SP"
+    },
+    {
+      "route": "/Collections/HTML/CC/play",
+      "file": "HTML/CC/play.html",
+      "game": "CC"
+    },
+    {
+      "route": "/Collections/HTML/GA/play",
+      "file": "HTML/GA/play.html",
+      "game": "GA"
+    },
+    {
+      "route": "/Collections/HTML/soccer-random/play",
+      "file": "HTML/soccer-random/play.html",
+      "game": "soccer-random"
+    },
+    {
+      "route": "/Collections/HTML/baldis-basics/play",
+      "file": "HTML/baldis-basics/play.html",
+      "game": "baldis-basics"
+    },
+    {
+      "route": "/Collections/HTML/DW/play",
+      "file": "HTML/DW/play.html",
+      "game": "DW"
+    },
+    {
+      "route": "/Collections/HTML/TP/play",
+      "file": "HTML/TP/play.html",
+      "game": "TP"
+    },
+    {
+      "route": "/Collections/HTML/getaway-shootout/play",
+      "file": "HTML/getaway-shootout/play.html",
+      "game": "getaway-shootout"
+    },
+    {
+      "route": "/Collections/HTML/SC/play",
+      "file": "HTML/SC/play.html",
+      "game": "SC"
+    },
+    {
+      "route": "/Collections/HTML/slowroads/play",
+      "file": "HTML/slowroads/play.html",
+      "game": "slowroads"
+    },
+    {
+      "route": "/Collections/HTML/SM/play",
+      "file": "HTML/SM/play.html",
+      "game": "SM"
+    },
+    {
+      "route": "/Collections/HTML/DM/play",
+      "file": "HTML/DM/play.html",
+      "game": "DM"
+    },
+    {
+      "route": "/Collections/HTML/monster-tracks/play",
+      "file": "HTML/monster-tracks/play.html",
+      "game": "monster-tracks"
+    },
+    {
+      "route": "/Collections/HTML/dodge/play",
+      "file": "HTML/dodge/play.html",
+      "game": "dodge"
+    },
+    {
+      "route": "/Collections/HTML/CG/play",
+      "file": "HTML/CG/play.html",
+      "game": "CG"
+    },
+    {
+      "route": "/Collections/HTML/EC/play",
+      "file": "HTML/EC/play.html",
+      "game": "EC"
+    },
+    {
+      "route": "/Collections/HTML/SB/play",
+      "file": "HTML/SB/play.html",
+      "game": "SB"
+    },
+    {
+      "route": "/Collections/HTML/basket-random/play",
+      "file": "HTML/basket-random/play.html",
+      "game": "basket-random"
+    },
+    {
+      "route": "/Collections/HTML/P8/play",
+      "file": "HTML/P8/play.html",
+      "game": "P8"
+    },
+    {
+      "route": "/Collections/HTML/CB/play",
+      "file": "HTML/CB/play.html",
+      "game": "CB"
+    },
+    {
+      "route": "/Collections/HTML/NP/play",
+      "file": "HTML/NP/play.html",
+      "game": "NP"
+    },
+    {
+      "route": "/Collections/HTML/polytrack/play",
+      "file": "HTML/polytrack/play.html",
+      "game": "polytrack"
+    },
+    {
+      "route": "/Collections/HTML/GG/play",
+      "file": "HTML/GG/play.html",
+      "game": "GG"
+    },
+    {
+      "route": "/Collections/HTML/fnaf1/play",
+      "file": "HTML/fnaf1/play.html",
+      "game": "fnaf1"
+    },
+    {
+      "route": "/Collections/HTML/RB/play",
+      "file": "HTML/RB/play.html",
+      "game": "RB"
+    },
+    {
+      "route": "/Collections/HTML/DA/play",
+      "file": "HTML/DA/play.html",
+      "game": "DA"
+    },
+    {
+      "route": "/Collections/HTML/CA/play",
+      "file": "HTML/CA/play.html",
+      "game": "CA"
+    },
+    {
+      "route": "/Collections/HTML/burito-bison/play",
+      "file": "HTML/burito-bison/play.html",
+      "game": "burito-bison"
+    },
+    {
+      "route": "/Collections/HTML/bitlife/play",
+      "file": "HTML/bitlife/play.html",
+      "game": "bitlife"
+    },
+    {
+      "route": "/Collections/HTML/crossyroad/play",
+      "file": "HTML/crossyroad/play.html",
+      "game": "crossyroad"
+    },
+    {
+      "route": "/Collections/HTML/NG/play",
+      "file": "HTML/NG/play.html",
+      "game": "NG"
+    },
+    {
+      "route": "/Collections/HTML/YG/play",
+      "file": "HTML/YG/play.html",
+      "game": "YG"
+    },
+    {
+      "route": "/Collections/HTML/Otherstuff/play",
+      "file": "HTML/Otherstuff/play.html",
+      "game": "Otherstuff"
+    },
+    {
+      "route": "/Collections/HTML/SF/play",
+      "file": "HTML/SF/play.html",
+      "game": "SF"
+    },
+    {
+      "route": "/Collections/HTML/FS/play",
+      "file": "HTML/FS/play.html",
+      "game": "FS"
+    },
+    {
+      "route": "/Collections/HTML/AT/play",
+      "file": "HTML/AT/play.html",
+      "game": "AT"
+    }
+  ]
+}

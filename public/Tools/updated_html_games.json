@@ -1,0 +1,164 @@
+{
+  "htmlGames": [
+    {
+      "route": "/Collections/HTML/drifthunters/play",
+      "file": "HTML/Drifthunters/play.html",
+      "game": "Drifthunters"
+    },
+    {
+      "route": "/Collections/HTML/TW/play",
+      "file": "HTML/Turbowarp (Scratch)/play.html",
+      "game": "Turbowarp (Scratch)"
+    },
+    {
+      "route": "/Collections/HTML/SP/play",
+      "file": "HTML/Spaceplan/play.html",
+      "game": "Spaceplan"
+    },
+    {
+      "route": "/Collections/HTML/CC/play",
+      "file": "HTML/Cookie Clicker/play.html",
+      "game": "Cookie Clicker"
+    },
+    {
+      "route": "/Collections/HTML/soccer-random/play",
+      "file": "HTML/Soccer Random/play.html",
+      "game": "Soccer Random"
+    },
+    {
+      "route": "/Collections/HTML/baldis-basics/play",
+      "file": "HTML/Baldis Basics/play.html",
+      "game": "Baldis Basics"
+    },
+    {
+      "route": "/Collections/HTML/DW/play",
+      "file": "HTML/Wordle/play.html",
+      "game": "Wordle"
+    },
+    {
+      "route": "/Collections/HTML/getaway-shootout/play",
+      "file": "HTML/Getaway Shootout/play.html",
+      "game": "Getaway Shootout"
+    },
+    {
+      "route": "/Collections/HTML/SC/play",
+      "file": "HTML/Space Company/play.html",
+      "game": "Space Company"
+    },
+    {
+      "route": "/Collections/HTML/slowroads/play",
+      "file": "HTML/Slowroads/play.html",
+      "game": "Slowroads"
+    },
+    {
+      "route": "/Collections/HTML/SM/play",
+      "file": "HTML/Super Mario 64/play.html",
+      "game": "Super Mario 64"
+    },
+    {
+      "route": "/Collections/HTML/DM/play",
+      "file": "HTML/Doge Miner/play.html",
+      "game": "Doge Miner"
+    },
+    {
+      "route": "/Collections/HTML/monster-tracks/play",
+      "file": "HTML/Monster Tracks/play.html",
+      "game": "Monster Tracks"
+    },
+    {
+      "route": "/Collections/HTML/dodge/play",
+      "file": "HTML/Dodge/play.html",
+      "game": "Dodge"
+    },
+    {
+      "route": "/Collections/HTML/CG/play",
+      "file": "HTML/AI Chess/play.html",
+      "game": "AI Chess"
+    },
+    {
+      "route": "/Collections/HTML/EC/play",
+      "file": "HTML/Electric Clciker/play.html",
+      "game": "Electric Clciker"
+    },
+    {
+      "route": "/Collections/HTML/SB/play",
+      "file": "HTML/Sandboxel/play.html",
+      "game": "Sandboxel"
+    },
+    {
+      "route": "/Collections/HTML/basket-random/play",
+      "file": "HTML/Basket Random/play.html",
+      "game": "Basket Random"
+    },
+    {
+      "route": "/Collections/HTML/CB/play",
+      "file": "HTML/Candy Box 2/play.html",
+      "game": "Candy Box 2"
+    },
+    {
+      "route": "/Collections/HTML/NP/play",
+      "file": "HTML/Planetesimals/play.html",
+      "game": "Planetesimals"
+    },
+    {
+      "route": "/Collections/HTML/polytrack/play",
+      "file": "HTML/Polytrack/play.html",
+      "game": "Polytrack"
+    },
+    {
+      "route": "/Collections/HTML/GG/play",
+      "file": "HTML/CSGO Clicker/play.html",
+      "game": "CSGO Clicker"
+    },
+    {
+      "route": "/Collections/HTML/fnaf1/play",
+      "file": "HTML/FNAF 1/play.html",
+      "game": "FNAF 1"
+    },
+    {
+      "route": "/Collections/HTML/RB/play",
+      "file": "HTML/Retrobowl/play.html",
+      "game": "Retrobowl"
+    },
+    {
+      "route": "/Collections/HTML/DA/play",
+      "file": "HTML/Drive Mad/play.html",
+      "game": "Drive Mad"
+    },
+    {
+      "route": "/Collections/HTML/CA/play",
+      "file": "HTML/Cellular Automata/play.html",
+      "game": "Cellular Automata"
+    },
+    {
+      "route": "/Collections/HTML/burito-bison/play",
+      "file": "HTML/Burito Bison/play.html",
+      "game": "Burito Bison"
+    },
+    {
+      "route": "/Collections/HTML/bitlife/play",
+      "file": "HTML/Bitlife/play.html",
+      "game": "Bitlife"
+    },
+    {
+      "route": "/Collections/HTML/crossyroad/play",
+      "file": "HTML/Crossyroad - Space/play.html",
+      "game": "Crossyroad - Space"
+    },
+    {
+      "route": "/Collections/HTML/NG/play",
+      "file": "HTML/N-Gon/play.html",
+      "game": "N-Gon"
+    },
+    {
+      "route": "/Collections/HTML/FS/play",
+      "file": "HTML/Funny Shooter 2/play.html",
+      "game": "Funny Shooter 2"
+    },
+    {
+      "route": "/Collections/HTML/AT/play",
+      "file": "HTML/Awesome Tanks/play.html",
+      "game": "Awesome Tanks"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebContainer Example</title>
+</head>
+<body>
+    <script type="module">
+        import { WebContainer } from '@webcontainer/api';
+
+        async function startWebContainer() {
+            const webcontainerInstance = await WebContainer.boot();
+
+            const projectFiles = {
+                'index.js': {
+                    file: {
+                        contents: `
+                            const http = require('http');
+                            const server = http.createServer((req, res) => {
+                                res.end('Hello from WebContainer!');
+                            });
+                            server.listen(3000, () => {
+                                console.log('Server running on http://localhost:3000');
+                            });
+                        `,
+                    },
+                },
+                'package.json': {
+                    file: {
+                        contents: JSON.stringify({
+                            name: 'webcontainer-example',
+                            version: '1.0.0',
+                            main: 'index.js',
+                            scripts: {
+                                start: 'node index.js',
+                            },
+                        }),
+                    },
+                },
+            };
+
+            // Mount the files
+            await webcontainerInstance.mount(projectFiles);
+
+            // Install dependencies
+            const installProcess = await webcontainerInstance.spawn('npm', ['install']);
+            await installProcess.exit;
+
+            // Start the server
+            const serverProcess = await webcontainerInstance.spawn('npm', ['start']);
+            webcontainerInstance.on('server-ready', (port, url) => {
+                console.log(`Server is live at ${url}`);
+            });
+        }
+
+        startWebContainer();
+    </script>
+</body>
+</html>

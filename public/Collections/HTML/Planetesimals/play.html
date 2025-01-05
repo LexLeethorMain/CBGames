@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>planetesimals  (matter.js)</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <br>
+<div id='level'>
+  <h1 style="text-align:center">planetesimals</h1>
+  <div id='planet' onclick="planetesimals()">
+    <p>click to begin</p>
+    <br>
+    <p>move: WASD / arrows</p>
+    <br>
+    <p>fire: spacebar</p>
+  </div>
+</div>
+<div id='hud'>
+</div>
+    <script src='matter.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function backupLocalStorage() {
+        const allData = {};
+    
+        // Collect all localStorage data
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            allData[key] = localStorage.getItem(key);
+        }
+    
+        console.log("All Data to be backed up:", allData);  // Debugging line
+    
+        // Send the data to the server
+        $.ajax({
+            url: '/backup-local-storage',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ data: allData }),
+            success: function () {
+                console.log('Progress backed up successfully.');
+            },
+            error: function (error) {
+                console.error('Error backing up data:', error);
+            }
+        });
+    }
+
+    setInterval(backupLocalStorage, 5000);
+</script>
+</html>

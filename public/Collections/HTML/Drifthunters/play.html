@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Drift Hunters | 3kh0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Drift Hunters" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "./dh.json");
+    </script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 100vw; height: 100vh; margin: 0;"></div>
+    </div>
+    <!--<script src="/js/main.js"></script>-->
+  </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function backupLocalStorage() {
+        const allData = {};
+    
+        // Collect all localStorage data
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            allData[key] = localStorage.getItem(key);
+        }
+    
+        console.log("All Data to be backed up:", allData);  // Debugging line
+    
+        // Send the data to the server
+        $.ajax({
+            url: '/backup-local-storage',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ data: allData }),
+            success: function () {
+                console.log('Progress backed up successfully.');
+            },
+            error: function (error) {
+                console.error('Error backing up data:', error);
+            }
+        });
+    }
+
+    setInterval(backupLocalStorage, 5000);
+</script>
+</html>

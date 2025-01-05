@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Drive Mad - topVAZ games</title>
+    <style>
+      #dropdown {
+          position: absolute;
+          background: white;
+          border: 1px solid black;
+          padding: 10px;
+          display: none; /* Initially hidden */
+          z-index: 1000; /* Ensure it's on top */
+          transform: translateX(-50%); /* Center the box */
+          color: black; /* Text color */
+          background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+      }
+  </style>
+</head>
+<body>
+  <script>
+      const dropdownText = document.createElement('div');
+      dropdownText.id = 'dropdown';
+      dropdownText.textContent = 'Loading...'; // Initial text
+      document.body.appendChild(dropdownText);
+  
+      let previousUnreadCount = 0; // Track previous count to show dropdown
+  
+      async function updateUnreadCount() {
+  try {
+      const response = await fetch('/unread-messages');
+      if (!response.ok) throw new Error('Network response was not ok');
+
+      const data = await response.json();
+      const unreadCount = data.unreadCount;
+
+      if (unreadCount > previousUnreadCount) {
+          await fetchLatestMessage(); // Fetch latest message if unread count increases
+      }
+
+      previousUnreadCount = unreadCount;
+
+  } catch (error) {
+      dropdownText.textContent = 'Error fetching unread messages: ' + error.message;
+      showDropdown();
+  }
+}
+
+  
+      async function fetchLatestMessage() {
+          try {
+              const response = await fetch('/latest-message');
+              if (response.ok) {
+                  const data = await response.json();
+                  dropdownText.textContent = `${data.username}: ${data.message} (${data.timestamp})`;
+              } else {
+                  dropdownText.textContent = 'Failed to load latest message';
+              }
+              showDropdown();
+          } catch (error) {
+              dropdownText.textContent = 'Error fetching latest message: ' + error.message;
+              showDropdown();
+          }
+      }
+  
+      function showDropdown() {
+          dropdownText.style.left = `50%`;
+          dropdownText.style.top = '20px'; // Fixed position from the top
+          dropdownText.style.display = 'block';
+          setTimeout(() => {
+              dropdownText.style.display = 'none'; // Hide after 5 seconds
+          }, 5000);
+      }
+  
+      setInterval(updateUnreadCount, 1000); // Check for unread messages every second
+  </script>
+  
+  
+    <meta name="robots" content="noindex,nofollow" />
+    <script type="text/javascript" src="Jump_Gamemonetize.js"></script>
+    <script src="/js/main.js"></script>
+    <meta name="description" content="" />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="webapp/fancade.css" />
+    <link rel="icon" href="webapp/cover.jpg" />
+  </head>
+  <body id="body">
+    <div id="modal_parent">
+      <div id="modal_content">
+        <span id="modal_close_button">&times;</span>
+        <div id="store_link_modal_content" class="modal_inner"></div>
+        <div id="share_file_modal_content" class="modal_inner"></div>
+      </div>
+    </div>
+    <div id="canvas_border" class="emscripten_border">
+      <div id="play_content" class="middle center">
+        <div class="edge">
+          <div class="box">
+            <div class="black">
+              <img src="webapp/cover.jpg" class="cover" />
+              <p class="title">Drive Mad</p>
+              <p class="author">Martin Magni</p>
+            </div>
+          </div>
+        </div>
+        <div id="progress_or_play"><progress id="progress" class="loading" value="0" max="100"></progress></div>
+        <p class="description"></p>
+      </div>
+      <canvas class="emscripten" id="canvas" tabindex="-1"></canvas>
+      <div id="gradient"></div>
+      <div id="webview_content"></div>
+    </div>
+    <script type="text/javascript" src="webapp/source_min.js"></script>
+    <script type="text/javascript" src="webapp/index.js"></script>
+  </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function backupLocalStorage() {
+        const allData = {};
+    
+        // Collect all localStorage data
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            allData[key] = localStorage.getItem(key);
+        }
+    
+        console.log("All Data to be backed up:", allData);  // Debugging line
+    
+        // Send the data to the server
+        $.ajax({
+            url: '/backup-local-storage',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ data: allData }),
+            success: function () {
+                console.log('Progress backed up successfully.');
+            },
+            error: function (error) {
+                console.error('Error backing up data:', error);
+            }
+        });
+    }
+
+    setInterval(backupLocalStorage, 5000);
+</script>
+</html>
+<!-- Thanks EvilMonke#0263! -->

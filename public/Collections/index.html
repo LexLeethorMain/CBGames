@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico" sizes="16x16">
+  <style>
+    .display-cat {
+      margin-left: 1%;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #181818;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+    }
+    header .logo {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    header nav {
+      display: flex;
+      gap: 20px;
+    }
+    header nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #1a1a1a;
+      transition: background 0.3s;
+    }
+    header nav a:hover {
+      background-color: #2a2a2a;
+    }
+    header nav .dropdown {
+      position: relative;
+      padding: 5px 0px;
+    }
+    header nav .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    header nav .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #2a2a2a;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: max-content;
+    }
+    header nav .dropdown-content a {
+      padding: 10px;
+      color: white;
+      display: block;
+    }
+    header nav .dropdown-content a:hover {
+      background-color: #3a3a3a;
+    }
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      height: 30vh;
+      margin: 0.5vh 0;
+      justify-content: center;
+      gap: 10px;
+    }
+    .carousel img {
+      height: 80%;
+      width: auto;
+      margin: 0.3%;
+      max-height: 80%;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .carousel img:hover {
+      transform: scale(1.05);
+    }
+
+
+    .game-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+    .game-list img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Chat Bubble Styles */
+    #chat-bubble {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #0066cc;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 24px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hidden chatbox */
+    #chatbox {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      display: none;
+      flex-direction: column;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #chatbox header {
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    #chatbox .messages {
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    #chatbox input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #chatbox button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #chatbox button:hover {
+      background-color: #005bb5;
+    }
+
+    footer {
+      background-color: #181818;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">CBGames</div>
+    <nav>
+      <a href="/Math">Home</a>
+      <a href="/Collections/HTML/">Games</a>
+      <div class="dropdown">
+
+      </div>
+      <a href="/Collections/Ruffle/">Flash Games</a>
+      <a href="/Chat">Chat</a>
+      <a href="/Settings">Settings</a>
+    </nav>
+  </header>
+
+  <h1 class="display-cat">Popular Games</h1>
+
+  <div class="carousel">
+    <img src="/Collections/Imgs/CC.jpg" alt="Cookie Clicker" data-link="/Collections/HTML/CC/play">
+    <img src="/Collections/Imgs/SM.png" alt="Game 2" data-link="/Collections/HTML/SM/play">
+    <img src="/Collections/Imgs/LTF.png" alt="Game 3" data-link="/Collections/Ruffle/play?game=ltf.swf">
+  </div>
+
+  <div class="game-list">
+    <img src="game1-thumbnail.png" alt="Game 1">
+    <img src="game2-thumbnail.png" alt="Game 2">
+    <img src="game3-thumbnail.png" alt="Game 3">
+    <img src="game4-thumbnail.png" alt="Game 4">
+  </div>
+<script>// Select all images in the carousel
+  const carouselImages = document.querySelectorAll('.carousel img');
+  
+  // Add click event listeners to each image
+  carouselImages.forEach(image => {
+    image.addEventListener('click', () => {
+      const link = image.getAttribute('data-link'); // Get the URL from the data-link attribute
+      if (link) {
+        window.location.href = link; // Redirect to the specified link
+      }
+    });
+  });
+  </script>
+</body>
+</html>

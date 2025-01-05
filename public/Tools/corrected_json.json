@@ -1,0 +1,286 @@
+{
+    "retroGames": [
+        {
+            "route": "/Collections/Retro/AdvancedWars/play",
+            "file": "Retro/AdvancedWars.html",
+            "game": "AdvancedWars"
+        },
+        {
+            "route": "/Collections/Retro/acww/play",
+            "file": "Retro/acww.html",
+            "game": "ACWW"
+        },
+        {
+            "route": "/Collections/Retro/gta2/play",
+            "file": "Retro/gta2.html",
+            "game": "GTA2"
+        },
+        {
+            "route": "/Collections/Retro/kirbysuperstar/play",
+            "file": "Retro/kirbysuperstar.html",
+            "game": "Kirby Super Star"
+        },
+        {
+            "route": "/Collections/Retro/nsmb/play",
+            "file": "Retro/nsmb.html",
+            "game": "NSMB"
+        },
+        {
+            "route": "/Collections/Retro/res-evil3/play",
+            "file": "Retro/res-evil3.html",
+            "game": "Resident Evil 3"
+        },
+        {
+            "route": "/Collections/Retro/sm64/play",
+            "file": "Retro/sm64.html",
+            "game": "Super Mario 64"
+        },
+        {
+            "route": "/Collections/Retro/smb/play",
+            "file": "Retro/smb.html",
+            "game": "Super Mario Bros"
+        },
+        {
+            "route": "/Collections/Retro/smw/play",
+            "file": "Retro/smw.html",
+            "game": "Super Mario World"
+        },
+        {
+            "route": "/Collections/Retro/sonic2/play",
+            "file": "Retro/sonic2.html",
+            "game": "Sonic 2"
+        },
+        {
+            "route": "/Collections/Retro/southpark/play",
+            "file": "Retro/southpark.html",
+            "game": "South Park"
+        },
+        {
+            "route": "/Collections/Retro/super-monkey-ball/play",
+            "file": "Retro/super-monkey-ball.html",
+            "game": "Super Monkey Ball"
+        },
+        {
+            "route": "/Collections/Retro/PokemonFireRed/play",
+            "file": "Retro/PokemonFireRed.html",
+            "game": "Pokemon Fire Red"
+        },
+        {
+            "route": "/Collections/Retro/ama/play",
+            "file": "Retro/ama.html",
+            "game": "AMA"
+        },
+        {
+            "route": "/Collections/Retro/crashbandi/play",
+            "file": "Retro/crashbandi.html",
+            "game": "Crash Bandicoot"
+        },
+        {
+            "route": "/Collections/Retro/links_awakening/play",
+            "file": "Retro/links_awakening.html",
+            "game": "Link's Awakening"
+        },
+        {
+            "route": "/Collections/Retro/pokemon/play",
+            "file": "Retro/pokemon.html",
+            "game": "Pokemon"
+        },
+        {
+            "route": "/Collections/Retro/sma2/play",
+            "file": "Retro/sma2.html",
+            "game": "Super Mario Advance 2"
+        },
+        {
+            "route": "/Collections/Retro/smballstars/play",
+            "file": "Retro/smballstars.html",
+            "game": "Super Mario All-Stars"
+        },
+        {
+            "route": "/Collections/Retro/sonic1/play",
+            "file": "Retro/sonic1.html",
+            "game": "Sonic 1"
+        },
+        {
+            "route": "/Collections/Retro/sonic3/play",
+            "file": "Retro/sonic3.html",
+            "game": "Sonic 3"
+        },
+        {
+            "route": "/Collections/Retro/spiderman/play",
+            "file": "Retro/spiderman.html",
+            "game": "Spiderman"
+        },
+        {
+            "route": "/Collections/Retro/unblocked-games-64/play",
+            "file": "Retro/unblocked-games-64.html",
+            "game": "Unblocked Games 64"
+        },
+        {
+            "route": "/Collections/Retro/zelda-oot/play",
+            "file": "Retro/zelda-oot.html",
+            "game": "Zelda Ocarina of Time"
+        }
+    ],
+    "htmlGames": [
+        {
+            "route": "/Collections/HTML/drifthunters/play",
+            "file": "HTML/drifthunters/play.html",
+            "game": "Drifthunters"
+        },
+        {
+            "route": "/Collections/HTML/TW/play",
+            "file": "HTML/TW/play.html",
+            "game": "Turbowarp (Scratch)"
+        },
+        {
+            "route": "/Collections/HTML/SP/play",
+            "file": "HTML/SP/play.html",
+            "game": "Spaceplan"
+        },
+        {
+            "route": "/Collections/HTML/CC/play",
+            "file": "HTML/CC/play.html",
+            "game": "Cookie Clicker"
+        },
+        {
+            "route": "/Collections/HTML/soccer-random/play",
+            "file": "HTML/soccer-random/play.html",
+            "game": "Soccer Random"
+        },
+        {
+            "route": "/Collections/HTML/baldis-basics/play",
+            "file": "HTML/baldis-basics/play.html",
+            "game": "Baldis Basics"
+        },
+        {
+            "route": "/Collections/HTML/DW/play",
+            "file": "HTML/DW/play.html",
+            "game": "Wordle"
+        },
+        {
+            "route": "/Collections/HTML/getaway-shootout/play",
+            "file": "HTML/getaway-shootout/play.html",
+            "game": "Getaway Shootout"
+        },
+        {
+            "route": "/Collections/HTML/SC/play",
+            "file": "HTML/SC/play.html",
+            "game": "Space Company"
+        },
+        {
+            "route": "/Collections/HTML/slowroads/play",
+            "file": "HTML/slowroads/play.html",
+            "game": "Slowroads"
+        },
+        {
+            "route": "/Collections/HTML/SM/play",
+            "file": "HTML/SM/play.html",
+            "game": "Super Mario 64"
+        },
+        {
+            "route": "/Collections/HTML/DM/play",
+            "file": "HTML/DM/play.html",
+            "game": "Doge Miner"
+        },
+        {
+            "route": "/Collections/HTML/monster-tracks/play",
+            "file": "HTML/monster-tracks/play.html",
+            "game": "Monster Tracks"
+        },
+        {
+            "route": "/Collections/HTML/dodge/play",
+            "file": "HTML/dodge/play.html",
+            "game": "Dodge"
+        },
+        {
+            "route": "/Collections/HTML/CG/play",
+            "file": "HTML/CG/play.html",
+            "game": "AI Chess"
+        },
+        {
+            "route": "/Collections/HTML/EC/play",
+            "file": "HTML/EC/play.html",
+            "game": "Electric Clciker"
+        },
+        {
+            "route": "/Collections/HTML/SB/play",
+            "file": "HTML/SB/play.html",
+            "game": "Sandboxel"
+        },
+        {
+            "route": "/Collections/HTML/basket-random/play",
+            "file": "HTML/basket-random/play.html",
+            "game": "Basket Random"
+        },
+        {
+            "route": "/Collections/HTML/CB/play",
+            "file": "HTML/CB/play.html",
+            "game": "Candy Box 2"
+        },
+        {
+            "route": "/Collections/HTML/NP/play",
+            "file": "HTML/NP/play.html",
+            "game": "Planetesimals"
+        },
+        {
+            "route": "/Collections/HTML/polytrack/play",
+            "file": "HTML/polytrack/play.html",
+            "game": "Polytrack"
+        },
+        {
+            "route": "/Collections/HTML/GG/play",
+            "file": "HTML/GG/play.html",
+            "game": "CSGO Clicker"
+        },
+        {
+            "route": "/Collections/HTML/fnaf1/play",
+            "file": "HTML/fnaf1/play.html",
+            "game": "FNAF 1"
+        },
+        {
+            "route": "/Collections/HTML/RB/play",
+            "file": "HTML/RB/play.html",
+            "game": "Retrobowl"
+        },
+        {
+            "route": "/Collections/HTML/DA/play",
+            "file": "HTML/DA/play.html",
+            "game": "Drive Mad"
+        },
+        {
+            "route": "/Collections/HTML/CA/play",
+            "file": "HTML/CA/play.html",
+            "game": "Cellular Automata"
+        },
+        {
+            "route": "/Collections/HTML/burito-bison/play",
+            "file": "HTML/burito-bison/play.html",
+            "game": "Burito Bison"
+        },
+        {
+            "route": "/Collections/HTML/bitlife/play",
+            "file": "HTML/bitlife/play.html",
+            "game": "Bitlife"
+        },
+        {
+            "route": "/Collections/HTML/crossyroad/play",
+            "file": "HTML/crossyroad/play.html",
+            "game": "Crossyroad - Space"
+        },
+        {
+            "route": "/Collections/HTML/NG/play",
+            "file": "HTML/NG/play.html",
+            "game": "N-Gon"
+        },
+        {
+            "route": "/Collections/HTML/FS/play",
+            "file": "HTML/FS/play.html",
+            "game": "Funny Shooter 2"
+        },
+        {
+            "route": "/Collections/HTML/AT/play",
+            "file": "HTML/AT/play.html",
+            "game": "Awesome Tanks"
+        }
+    ]
+}

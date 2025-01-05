@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@webcontainer/api": "^1.5.1-internal.5",
+    "axios": "^1.7.7",
+    "body-parser": "^1.20.3",
+    "chalk": "^4.1.2",
+    "compression": "^1.7.5",
+    "connect-redis": "^7.1.1",
+    "crypto": "^1.0.1",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "fs": "^0.0.1-security",
+    "fs-extra": "^11.2.0",
+    "http-proxy-middleware": "^3.0.3",
+    "httpolyglot": "^0.1.2",
+    "mhtml2html": "^3.0.0",
+    "morgan": "^1.10.0",
+    "nedb-session-store": "^1.1.2",
+    "nerdamer": "^1.1.13",
+    "node-fetch": "^2.7.0",
+    "path": "^0.12.7",
+    "redis": "^4.7.0",
+    "socket.io": "^4.8.0",
+    "uuid": "^11.0.3",
+    "ws": "^8.18.0"
+  }
+}
